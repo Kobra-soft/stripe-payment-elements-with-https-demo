@@ -1,4 +1,5 @@
 "use client";
+import React, { useEffect, useState } from "react";
 
 import CheckoutPage from "@/components/CheckoutPage";
 import convertToSubcurrency from "@/lib/convertToSubcurrency";
@@ -12,7 +13,31 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function Home() {
-  const amount = 129.99;
+  const amount = 9.99;
+  // Random amount between £10 and £30
+  /// & fixed to 2 decimal places
+  /* const [amount] = useState(() =>
+    parseFloat((Math.random() * (30 - 10) + 10).toFixed(2))
+  ); */
+
+  useEffect(() => {
+    const createPaymentIntent = async () => {
+      try {
+        const response = await fetch("/api/create-payment-intent", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ amount: convertToSubcurrency(amount) }),
+        });
+        const data = await response.json();
+        console.log("Payment Intent Created:", data);
+      } catch (error) {
+        console.error("Error creating payment intent:", error);
+      }
+    };
+    createPaymentIntent();
+  }, []);
 
   return (
     <main
