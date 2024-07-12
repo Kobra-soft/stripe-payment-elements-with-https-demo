@@ -14,6 +14,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function Home() {
   const amount = 9.99;
+  
   // Random amount between £10 and £30
   /// & fixed to 2 decimal places
   /* const [amount] = useState(() =>
