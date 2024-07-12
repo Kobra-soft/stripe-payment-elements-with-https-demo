@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'NotoSans-Medium'; /* Name your font family */
+  src: url('fonts/NotoSans-Medium.ttf'); /* Locate the .ttf file within your directory*/
+}
+
 body {
-  /* font-family: 'Nunito', sans-serif; */
+  font-family: 'NotoSans-Medium', sans-serif;
   background-color: rgb(23, 23, 23);
 }
