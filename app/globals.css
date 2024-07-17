@@ -3,11 +3,31 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'NotoSans-Medium'; /* Name your font family */
-  src: url('fonts/NotoSans-Medium.ttf'); /* Locate the .ttf file within your directory*/
+  font-family: 'NotoSans-Medium'; 
+  src: url('fonts/NotoSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'NotoSans-Italic'; 
+  src: url('fonts/NotoSans-SemiBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'NotoSans-Bold'; 
+  src: url('fonts/NotoSans-Bold.ttf');
 }
 
 body {
   font-family: 'NotoSans-Medium', sans-serif;
-  background-color: rgb(23, 23, 23);
+  background-color: rgb(228, 228, 228);
+}
+
+h2 {
+  font-family: 'NotoSans-Italic', sans-serif;
+  color: rgb(5, 5, 5);
+}
+
+span {
+  font-family: 'NotoSans-Bold', sans-serif;
+  color: rgb(255, 255, 255);
 }

@@ -13,7 +13,7 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function Home() {
-  const amount = 9.99;
+  const amount = 12.95;
   
   // Random amount between £10 and £30
   /// & fixed to 2 decimal places
@@ -43,13 +43,12 @@ export default function Home() {
   return (
     <main
       className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gradient-to-tr
-   from-rose-600 to bg-orange-500"
+   from-blue-700 to bg-violet-900"
     >
-      <div className="mb-10">
-        <h1 className="text-4xl font-extrabold mb-2">Kobra-soft</h1>
-        <h2 className="text-2xl">
-          has requested
-          <span className="font-bold"> £{amount}</span>
+      <div className="mb-8">
+        <h1 className="text-4xl font-extrabold mb-2">TradeZone Technologies</h1>
+        <h2 className="text-[22px]">Have requested a payment of {" "}
+          <span className="text-[20px]"> £{amount}</span>
         </h2>
       </div>
 
